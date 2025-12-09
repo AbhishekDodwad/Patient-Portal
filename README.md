@@ -316,34 +316,6 @@ The `documents` table has the following structure:
 | filesize   | BIGINT    | File size in bytes             |
 | created_at | TIMESTAMP | Upload timestamp (auto)        |
 
-## Troubleshooting
-
-### Backend won't start
-- Check that PostgreSQL is running
-- Verify database credentials in `.env` file
-- Ensure database `patient_portal` exists
-- Check that port 3001 is not in use
-
-### Frontend can't connect to backend
-- Ensure backend is running on port 3001
-- Check CORS configuration in `backend/server.js`
-- Verify API URL in `frontend/src/services/api.js`
-
-### File upload fails
-- Ensure `backend/uploads/` directory exists (created automatically)
-- Check file size is under 10MB
-- Verify file is a PDF (`.pdf` extension, `application/pdf` MIME type)
-
-### Database connection errors
-- Verify PostgreSQL is installed and running
-- Check database credentials in `.env` file
-- Ensure database exists: `CREATE DATABASE patient_portal;`
-- Run schema initialization: `node backend/database/init.js`
-- **Windows users:** If `psql` is not recognized:
-  - Use the PowerShell script: `backend\setup-database.ps1`
-  - Or use pgAdmin GUI to create the database
-  - Or add PostgreSQL bin directory to PATH
-
 ## Development Notes
 
 - Backend runs on port **3001**
@@ -358,20 +330,8 @@ For production use, consider:
 - User authentication and authorization
 - Cloud storage integration (AWS S3, Azure Blob)
 - File encryption
-- Virus scanning
-- Audit logging
 - Pagination for large document lists
-- Search and filter functionality
-- File versioning
-- HTTPS/TLS encryption
 - Rate limiting
 - Comprehensive error logging
 
-## License
-
-This project is created for assignment purposes.
-
-## Contact
-
-For questions or issues, please refer to the design document (`design.md`) for detailed architecture and decision explanations.
 
